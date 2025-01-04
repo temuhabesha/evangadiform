@@ -10,11 +10,16 @@ const db_connection = require('./db/db.config')
 // user routes middel ware
 const userRoute = require('./routes/userRout')
 
+// question routes middel ware
+const questionRouts = require('./routes/questionsRouts')
+
 //json middel ware
 
 app.use(express.json())
 
 app.use('/api/users',userRoute)
+
+app.use('/api/questions',questionRouts)
 
 async function start (){
     try {
